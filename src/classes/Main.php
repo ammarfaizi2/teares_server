@@ -45,6 +45,10 @@ _unauthorized:
 					$this->ping();
 					break;
 				
+				case "shell_cmd_result":
+					$this->shellCmdResult();
+					break;
+
 				default:
 					error_api("Invalid action \"{$_GET["action"]}\"", 400);
 					break;
@@ -56,11 +60,18 @@ _unauthorized:
 	}
 
 	/**
-	 *
+	 * @return void
 	 */
 	private function ping(): void
 	{
-		$handle = fopen(sprintf("%s/logs/{$_SERVER["REMOTE_ADDR"]}.log", STORAGE_PATH), "a");
-		fwrite($handle, sprintf("%s\t%s\n", dechex(time()), "ping"));
+		new Ping;		
+	}
+
+	/**
+	 * @return void
+	 */
+	private function shellCmdResult(): void
+	{
+		new ShellCmdResult;
 	}
 }

@@ -61,6 +61,6 @@ _unauthorized:
 	private function ping(): void
 	{
 		$handle = fopen(sprintf("%s/logs/{$_SERVER["REMOTE_ADDR"]}.log", STORAGE_PATH), "a");
-		fwrite($handle, sprintf("[%s] %s\n", date("Y-m-d H:i:s"), "ping"));
+		fwrite($handle, sprintf("%s\t%s\n", dechex(time()), "ping"));
 	}
 }

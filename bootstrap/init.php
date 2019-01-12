@@ -22,5 +22,6 @@ if (!defined("__TEARES_INIT")):
 	}
 
 	spl_autoload_register("tearesInternalClassAutoloader");
+	require BASEPATH."/src/helpers.php";
 
 endif;

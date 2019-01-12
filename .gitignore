@@ -7,4 +7,6 @@
 *.lock
 __pycache__
 /.phpintel/
-/config.php
+
+# Config
+/config/keys.php
